@@ -3,327 +3,195 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reunion Trip — Class of 2022 Naminya Schools</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Reunion Trip 2026 — Class of 2022 Naminya Schools</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+    :root {
+      --primary: #0284c7;
+      --primary-hover: #0369a1;
+      --secondary: #f59e0b;
+      --accent: #25d366;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
     }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--light); color: var(--dark); padding-bottom: 50px; line-height: 1.5; }
+    
+    header { 
+      background: linear-gradient(135deg, #0369a1, #0f172a); 
+      color: white; 
+      text-align: center; 
+      padding: 50px 20px 40px; 
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+    }
+    header h1 { font-size: 2rem; color: var(--secondary); margin-bottom: 6px; letter-spacing: -0.5px; }
+    header p { font-size: 1rem; opacity: 0.9; }
+
+    .container { max-width: 580px; margin: -20px auto 0; padding: 0 16px; }
+    .card { background: var(--card-bg); padding: 24px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); margin-bottom: 20px; border: 1px solid var(--border); }
+    .card h3 { font-size: 1.2rem; margin-bottom: 12px; color: var(--dark); }
+
+    .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+    .detail-item { background: #f8fafc; padding: 12px; border-radius: 10px; border: 1px solid #f1f5f9; }
+    .detail-item h4 { font-size: 0.75rem; color: #64748b; text-transform: uppercase; margin-bottom: 4px; }
+    .detail-item p { font-size: 1rem; font-weight: 700; color: var(--dark); }
+
+    .activities-list { margin-top: 10px; padding-left: 20px; }
+    .activities-list li { margin-bottom: 8px; font-size: 0.95rem; color: #334155; }
+
+    .momo-box { background: #f8fafc; border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-top: 12px; }
+    .momo-row { display: flex; justify-content: space-between; align-items: center; }
+    .momo-title { font-weight: 700; font-size: 0.9rem; }
+    .momo-num { font-family: monospace; font-size: 1.05rem; font-weight: 700; }
+    .momo-name { font-size: 0.8rem; color: #64748b; }
+    
+    .copy-btn { background: #e2e8f0; border: none; padding: 8px 14px; border-radius: 8px; font-size: 0.8rem; cursor: pointer; font-weight: 600; transition: background 0.2s; }
+    .copy-btn:hover { background: #cbd5e1; }
+
+    form label { display: block; margin-top: 16px; font-weight: 600; font-size: 0.85rem; color: #334155; }
+    form input, form select { width: 100%; padding: 12px 14px; margin-top: 6px; border: 1px solid var(--border); border-radius: 10px; font-size: 0.95rem; background: #fff; }
+    form input:focus, form select:focus { outline: none; border-color: var(--primary); }
+
+    .btn { display: block; width: 100%; background: var(--primary); color: white; padding: 14px; border: none; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 20px; text-align: center; text-decoration: none; transition: background 0.2s; }
+    .btn:hover { background: var(--primary-hover); }
+    .btn-whatsapp { background: var(--accent); margin-top: 10px; }
+    .btn-whatsapp:hover { background: #1eb954; }
+
+    .notice { font-size: 0.825rem; color: #475569; margin-top: 16px; background: #f8fafc; padding: 14px; border-radius: 10px; border-left: 4px solid var(--primary); }
+    
+    .contact-links { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+    .contact-item { display: flex; align-items: center; justify-content: space-between; padding: 12px; background: #f8fafc; border-radius: 10px; border: 1px solid var(--border); text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; }
+    .contact-item:hover { background: #f1f5f9; }
   </style>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen pb-12 selection:bg-amber-500 selection:text-slate-900">
+<body>
 
-  <!-- Hero / Header Section -->
-  <header class="relative overflow-hidden bg-gradient-to-b from-sky-900 via-slate-900 to-slate-900 pt-10 pb-16 px-4 text-center border-b border-sky-800/40">
-    <!-- Decorative background elements -->
-    <div class="absolute -top-24 -left-24 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute top-10 -right-24 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-    <div class="max-w-xl mx-auto relative z-10">
-      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold tracking-wide uppercase mb-4">
-        <i class="fa-solid fa-graduation-cap"></i> Class of 2022 • Naminya Schools
-      </span>
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight mb-3">
-        Reunion Trip 2026
-      </h1>
-      <p class="text-sky-200/80 text-sm sm:text-base max-w-md mx-auto">
-        Back together again! Join us for a memorable day at <span class="text-amber-400 font-semibold">GT Beach Mukono</span>.
-      </p>
-    </div>
+  <header>
+    <h1>Reunion Trip 2026</h1>
+    <p>Class of 2022 — Naminya Schools</p>
   </header>
 
-  <main class="max-w-xl mx-auto px-4 -mt-8 relative z-20 space-y-6">
+  <div class="container">
+    <!-- Trip Overview -->
+    <div class="card">
+      <h3>Trip Details</h3>
+      <div class="details-grid">
+        <div class="detail-item">
+          <h4>Date</h4>
+          <p>19th Dec 2026</p>
+        </div>
+        <div class="detail-item">
+          <h4>Pick-up Point</h4>
+          <p>Nile Taxi Stage</p>
+        </div>
+        <div class="detail-item">
+          <h4>Destination</h4>
+          <p>GT Beach Mukono</p>
+        </div>
+        <div class="detail-item">
+          <h4>Booking Fee</h4>
+          <p>UGX 20,000</p>
+        </div>
+      </div>
 
-    <!-- Quick Event Overview Cards -->
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-      <div class="bg-slate-800/90 border border-slate-700/60 p-3.5 rounded-xl text-center shadow-lg backdrop-blur-sm">
-        <i class="fa-regular fa-calendar-check text-sky-400 text-lg mb-1 block"></i>
-        <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Date</span>
-        <span class="text-xs font-bold text-slate-100">19 Dec 2026</span>
-      </div>
-      <div class="bg-slate-800/90 border border-slate-700/60 p-3.5 rounded-xl text-center shadow-lg backdrop-blur-sm">
-        <i class="fa-solid fa-location-dot text-amber-400 text-lg mb-1 block"></i>
-        <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Pick-up</span>
-        <span class="text-xs font-bold text-slate-100">Nile Taxi Stage</span>
-      </div>
-      <div class="bg-slate-800/90 border border-slate-700/60 p-3.5 rounded-xl text-center shadow-lg backdrop-blur-sm">
-        <i class="fa-solid fa-umbrella-beach text-emerald-400 text-lg mb-1 block"></i>
-        <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Venue</span>
-        <span class="text-xs font-bold text-slate-100">GT Beach Mukono</span>
-      </div>
-      <div class="bg-slate-800/90 border border-slate-700/60 p-3.5 rounded-xl text-center shadow-lg backdrop-blur-sm">
-        <i class="fa-solid fa-ticket text-rose-400 text-lg mb-1 block"></i>
-        <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Booking</span>
-        <span class="text-xs font-bold text-amber-400">UGX 20,000</span>
-      </div>
+      <h4>Activities</h4>
+      <ul class="activities-list">
+        <li>Swimming & Beach Lounging</li>
+        <li>Group Photo Sessions at Scenic Stopovers</li>
+        <li>Roadside Snacks & Refreshments</li>
+        <li>Games, Music & Networking</li>
+      </ul>
     </div>
 
-    <!-- Activities & Trip Info -->
-    <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 shadow-xl">
-      <h2 class="text-base font-bold text-white mb-3 flex items-center gap-2">
-        <i class="fa-solid fa-compass text-sky-400"></i> Trip Activities & Vibes
-      </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-sm">
-        <div class="flex items-center gap-3 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
-          <div class="w-8 h-8 rounded-full bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0">
-            <i class="fa-solid fa-water-ladder text-xs"></i>
-          </div>
-          <span class="text-xs font-medium text-slate-200">Swimming & Beach Lounging</span>
-        </div>
-        <div class="flex items-center gap-3 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
-          <div class="w-8 h-8 rounded-full bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0">
-            <i class="fa-solid fa-camera-retro text-xs"></i>
-          </div>
-          <span class="text-xs font-medium text-slate-200">Group Photos at Scenic Stops</span>
-        </div>
-        <div class="flex items-center gap-3 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
-          <div class="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
-            <i class="fa-solid fa-burger text-xs"></i>
-          </div>
-          <span class="text-xs font-medium text-slate-200">Roadside Snacks & Drinks</span>
-        </div>
-        <div class="flex items-center gap-3 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
-          <div class="w-8 h-8 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center shrink-0">
-            <i class="fa-solid fa-music text-xs"></i>
-          </div>
-          <span class="text-xs font-medium text-slate-200">Games, Music & Networking</span>
-        </div>
-      </div>
+    <!-- WhatsApp Group Invite Button -->
+    <div class="card" style="text-align: center;">
+      <h3>Join the Official Group</h3>
+      <p style="font-size: 0.85rem; color: #475569; margin-bottom: 12px;">Get live updates, connect with classmates, and ask questions directly in our group.</p>
+      <a href="https://chat.whatsapp.com/JItIbBJcMpX2yM5ixU5YKg?s=cl&p=a&mlu=4&ilr=4" target="_blank" class="btn btn-whatsapp">Join WhatsApp Group</a>
     </div>
 
-    <!-- Step 1: Payment Numbers -->
-    <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 shadow-xl relative overflow-hidden">
-      <div class="flex items-center justify-between mb-3">
-        <h2 class="text-base font-bold text-white flex items-center gap-2">
-          <span class="w-6 h-6 rounded-full bg-sky-500 text-slate-900 text-xs font-extrabold flex items-center justify-center">1</span>
-          Send Payment
-        </h2>
-        <span class="text-[11px] text-slate-400">Select Mobile Money option</span>
-      </div>
-
-      <p class="text-xs text-slate-300 mb-4 leading-relaxed">
-        Send your booking fee (<strong class="text-amber-400">UGX 20,000</strong>) or full entrance fee (<strong class="text-amber-400">UGX 40,000</strong>) to either recipient below:
+    <!-- Step 1: Send Money Numbers -->
+    <div class="card">
+      <h3>Step 1: Send Payment</h3>
+      <p style="font-size: 0.85rem; color: #475569; margin-top: 4px;">
+        Send mobile money to either account below:
       </p>
 
-      <div class="space-y-3">
-        <!-- MTN Mobile Money -->
-        <div class="bg-gradient-to-r from-amber-950/40 to-slate-900 border border-amber-500/30 p-3.5 rounded-xl flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-xs shrink-0 shadow-md">
-              MTN
-            </div>
-            <div>
-              <div class="text-xs text-amber-400 font-semibold">MTN Mobile Money</div>
-              <div class="text-sm font-bold text-white tracking-wider font-mono" id="mtnNum">0782323095</div>
-              <div class="text-[11px] text-slate-400">Account: <span class="text-slate-200 font-medium">Kibwika Rasul</span></div>
-            </div>
+      <div class="momo-box">
+        <div class="momo-row">
+          <div>
+            <div class="momo-title" style="color: #d97706;">MTN Mobile Money</div>
+            <div class="momo-num" id="mtnNum">0782323095</div>
+            <div class="momo-name">Kibwika Rasul</div>
           </div>
-          <button onclick="copyToClipboard('0782323095', 'MTN')" class="px-3 py-1.5 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 active:scale-95">
-            <i class="fa-regular fa-copy"></i> Copy
-          </button>
+          <button class="copy-btn" onclick="copyNumber('mtnNum')">Copy</button>
         </div>
-
-        <!-- Airtel Money -->
-        <div class="bg-gradient-to-r from-rose-950/40 to-slate-900 border border-rose-500/30 p-3.5 rounded-xl flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-rose-600 text-white flex items-center justify-center font-black text-xs shrink-0 shadow-md">
-              AIRTEL
-            </div>
-            <div>
-              <div class="text-xs text-rose-400 font-semibold">Airtel Money</div>
-              <div class="text-sm font-bold text-white tracking-wider font-mono" id="airtelNum">0743853811</div>
-              <div class="text-[11px] text-slate-400">Account: <span class="text-slate-200 font-medium">Wabwiire Elvis</span></div>
-            </div>
+        <hr style="border: 0; border-top: 1px solid var(--border); margin: 12px 0;">
+        <div class="momo-row">
+          <div>
+            <div class="momo-title" style="color: #dc2626;">Airtel Money</div>
+            <div class="momo-num" id="airtelNum">0743853811</div>
+            <div class="momo-name">Wabwiire Elvis</div>
           </div>
-          <button onclick="copyToClipboard('0743853811', 'Airtel')" class="px-3 py-1.5 bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-500/40 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 active:scale-95">
-            <i class="fa-regular fa-copy"></i> Copy
-          </button>
+          <button class="copy-btn" onclick="copyNumber('airtelNum')">Copy</button>
         </div>
       </div>
     </div>
 
-    <!-- Step 2: Registration & Confirmation Form -->
-    <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 shadow-xl">
-      <div class="flex items-center justify-between mb-4">
-        <h2 class="text-base font-bold text-white flex items-center gap-2">
-          <span class="w-6 h-6 rounded-full bg-sky-500 text-slate-900 text-xs font-extrabold flex items-center justify-center">2</span>
-          Confirm Registration
-        </h2>
-        <span class="text-[11px] text-amber-400 font-semibold"><i class="fa-regular fa-clock"></i> Deadline: 14 Nov 2026</span>
-      </div>
+    <!-- Step 2: Confirmation Form -->
+    <div class="card">
+      <h3>Step 2: Submit Payment Details</h3>
+      <form id="confirmForm" action="https://formspree.io/f/xnpjjpky" method="POST">
+        <label for="fullname">Full Name</label>
+        <input type="text" name="Full Name" id="fullname" placeholder="Enter your full name" required>
 
-      <form id="registrationForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
-        <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name *</label>
-          <input type="text" id="fullName" required placeholder="e.g. John Doe" 
-                 class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all placeholder:text-slate-500">
-        </div>
+        <label for="phone">Your Phone Number</label>
+        <input type="tel" name="Phone Number" id="phone" placeholder="07XXXXXXXX" required>
 
-        <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Your Phone Number *</label>
-          <input type="tel" id="phoneNumber" required placeholder="07XXXXXXXX" 
-                 class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all placeholder:text-slate-500">
-        </div>
+        <label for="paymentType">Payment Type</label>
+        <select name="Payment Type" id="paymentType">
+          <option value="Booking Fee (UGX 20,000)">Booking Fee (UGX 20,000)</option>
+          <option value="Full Entrance Fee (UGX 40,000)">Full Entrance Fee (UGX 40,000)</option>
+        </select>
 
-        <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Payment Amount Sent *</label>
-          <select id="paymentType" class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all">
-            <option value="Booking Fee (UGX 20,000)">Booking Fee (UGX 20,000)</option>
-            <option value="Full Entrance Fee (UGX 40,000)">Full Entrance Fee (UGX 40,000)</option>
-          </select>
-        </div>
+        <label for="txid">Mobile Money Transaction ID / Ref</label>
+        <input type="text" name="Transaction ID" id="txid" placeholder="e.g. 24891023912" required>
 
-        <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Mobile Money Transaction ID / Ref *</label>
-          <input type="text" id="transactionId" required placeholder="e.g. 24891023912 or SMS ID" 
-                 class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all placeholder:text-slate-500">
-        </div>
-
-        <button type="submit" class="w-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-sky-500/20 active:scale-[0.99] transition-all flex items-center justify-center gap-2 text-sm">
-          <i class="fa-solid fa-paper-plane"></i> Submit Registration
-        </button>
+        <button type="submit" class="btn">Confirm Registration</button>
       </form>
 
-      <!-- Terms / Policies Box -->
-      <div class="mt-4 p-3 bg-slate-900/60 border border-slate-800 rounded-xl text-[11px] text-slate-400 leading-relaxed">
-        <p><strong class="text-slate-300"><i class="fa-solid fa-circle-info text-sky-400"></i> Refund Policy:</strong> All refunds are strictly processed after the trip date (19th Dec 2026).</p>
+      <div class="notice">
+        <p><strong>Deadline:</strong> 14th November 2026</p>
+        <p><strong>Refund Policy:</strong> Refunds are strictly processed after the trip date.</p>
       </div>
     </div>
 
-    <!-- Registrations History (Stored in LocalStorage) -->
-    <div id="historySection" class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 shadow-xl hidden">
-      <div class="flex items-center justify-between mb-3">
-        <h3 class="text-sm font-bold text-white flex items-center gap-2">
-          <i class="fa-solid fa-receipt text-emerald-400"></i> Your Submitted Bookings
-        </h3>
-        <span id="bookingCount" class="text-xs bg-emerald-500/20 text-emerald-400 font-bold px-2 py-0.5 rounded-full border border-emerald-500/30">0</span>
+    <!-- Contact Options -->
+    <div class="card">
+      <h3>Need Help?</h3>
+      <p style="font-size: 0.85rem; color: #475569; margin-bottom: 10px;">Reach out directly for inquiries or support:</p>
+      <div class="contact-links">
+        <a href="https://wa.me/256782323095" target="_blank" class="contact-item">
+          <span>WhatsApp Organizer</span>
+          <span style="color: var(--accent);">+256 782 323095</span>
+        </a>
+        <a href="mailto:rasulkibwika@gmail.com" class="contact-item">
+          <span>Email Support</span>
+          <span style="color: var(--primary);">rasulkibwika@gmail.com</span>
+        </a>
       </div>
-      <div id="bookingList" class="space-y-2"></div>
     </div>
-
-  </main>
-
-  <!-- Notification Toast -->
-  <div id="toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 bg-slate-800 border border-slate-700 text-white px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 text-xs font-semibold opacity-0 pointer-events-none transition-all duration-300 z-50">
-    <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400"></i>
-    <span id="toastMsg">Copied to clipboard</span>
   </div>
 
   <script>
-    function copyToClipboard(text, label) {
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(text).then(() => {
-          showToast(`Copied ${label} number: ${text}`);
-        }).catch(() => {
-          fallbackCopy(text, label);
-        });
-      } else {
-        fallbackCopy(text, label);
-      }
-    }
-
-    function fallbackCopy(text, label) {
-      const textArea = document.createElement("textarea");
-      textArea.value = text;
-      document.body.appendChild(textArea);
-      textArea.focus();
-      textArea.select();
-      try {
-        document.execCommand('copy');
-        showToast(`Copied ${label} number: ${text}`);
-      } catch (err) {
-        showToast("Failed to copy. Please manually copy the number.");
-      }
-      document.body.removeChild(textArea);
-    }
-
-    function showToast(message) {
-      const toast = document.getElementById('toast');
-      const toastMsg = document.getElementById('toastMsg');
-      toastMsg.innerText = message;
-      toast.classList.remove('opacity-0', 'pointer-events-none');
-      toast.classList.add('opacity-100');
-
-      setTimeout(() => {
-        toast.classList.remove('opacity-100');
-        toast.classList.add('opacity-0', 'pointer-events-none');
-      }, 3000);
-    }
-
-    function handleFormSubmit(event) {
-      event.preventDefault();
-
-      const fullName = document.getElementById('fullName').value.trim();
-      const phoneNumber = document.getElementById('phoneNumber').value.trim();
-      const paymentType = document.getElementById('paymentType').value;
-      const transactionId = document.getElementById('transactionId').value.trim();
-
-      if (!fullName || !phoneNumber || !transactionId) {
-        showToast('Please fill in all required fields.');
-        return;
-      }
-
-      const booking = {
-        id: Date.now(),
-        fullName,
-        phoneNumber,
-        paymentType,
-        transactionId,
-        dateSubmitted: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
-      };
-
-      // Save to localStorage
-      const existing = JSON.parse(localStorage.getItem('naminya_reunion_bookings') || '[]');
-      existing.unshift(booking);
-      localStorage.setItem('naminya_reunion_bookings', JSON.stringify(existing));
-
-      // Reset form
-      document.getElementById('registrationForm').reset();
-
-      showToast('Registration submitted successfully!');
-      renderBookings();
-    }
-
-    function renderBookings() {
-      const bookings = JSON.parse(localStorage.getItem('naminya_reunion_bookings') || '[]');
-      const historySection = document.getElementById('historySection');
-      const bookingList = document.getElementById('bookingList');
-      const bookingCount = document.getElementById('bookingCount');
-
-      if (bookings.length === 0) {
-        historySection.classList.add('hidden');
-        return;
-      }
-
-      historySection.classList.remove('hidden');
-      bookingCount.innerText = bookings.length;
-
-      bookingList.innerHTML = bookings.map(item => `
-        <div class="bg-slate-900/80 border border-slate-800 p-3 rounded-xl text-xs flex items-center justify-between">
-          <div>
-            <div class="font-bold text-white">${escapeHtml(item.fullName)}</div>
-            <div class="text-slate-400 text-[11px]">${escapeHtml(item.phoneNumber)} • ${escapeHtml(item.paymentType)}</div>
-            <div class="text-sky-400 font-mono text-[10px] mt-0.5">Ref: ${escapeHtml(item.transactionId)}</div>
-          </div>
-          <span class="text-[10px] text-slate-500 font-medium">${item.dateSubmitted}</span>
-        </div>
-      `).join('');
-    }
-
-    function escapeHtml(text) {
-      return text.replace(/[&<>"']/g, function(m) {
-        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+    function copyNumber(elementId) {
+      const text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Copied " + text + " to clipboard!");
       });
     }
-
-    // Load existing bookings on page initialization
-    window.onload = function() {
-      renderBookings();
-    };
   </script>
 </body>
-  </html>
+</html>
