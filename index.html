@@ -151,10 +151,16 @@
         <input type="tel" name="Phone Number" id="phone" placeholder="07XXXXXXXX" required>
 
         <label for="paymentType">Payment Type</label>
-        <select name="Payment Type" id="paymentType">
+        <select name="Payment Type" id="paymentType" onchange="toggleCustomAmount()">
           <option value="Booking Fee (UGX 20,000)">Booking Fee (UGX 20,000)</option>
           <option value="Full Entrance Fee (UGX 40,000)">Full Entrance Fee (UGX 40,000)</option>
+          <option value="Custom / Balance Top-up">Custom / Balance Top-up</option>
         </select>
+
+        <div id="customAmountGroup" style="display: none;">
+          <label for="customAmount">Specify Amount Paid (UGX)</label>
+          <input type="number" name="Custom Amount" id="customAmount" placeholder="e.g. 10000">
+        </div>
 
         <label for="txid">Mobile Money Transaction ID / Ref</label>
         <input type="text" name="Transaction ID" id="txid" placeholder="e.g. 24891023912" required>
@@ -191,6 +197,16 @@
       navigator.clipboard.writeText(text).then(() => {
         alert("Copied " + text + " to clipboard!");
       });
+    }
+
+    function toggleCustomAmount() {
+      const paymentType = document.getElementById("paymentType").value;
+      const customGroup = document.getElementById("customAmountGroup");
+      if (paymentType === "Custom / Balance Top-up") {
+        customGroup.style.display = "block";
+      } else {
+        customGroup.style.display = "none";
+      }
     }
   </script>
 </body>
