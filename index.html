@@ -36,7 +36,7 @@
     .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
     .detail-item { background: #f8fafc; padding: 12px; border-radius: 10px; border: 1px solid #f1f5f9; }
     .detail-item h4 { font-size: 0.75rem; color: #64748b; text-transform: uppercase; margin-bottom: 4px; }
-    .detail-item p { font-size: 1rem; font-weight: 700; color: var(--dark); }
+    .detail-item p { font-size: 0.95rem; font-weight: 700; color: var(--dark); }
 
     .activities-list { margin-top: 10px; padding-left: 20px; }
     .activities-list li { margin-bottom: 8px; font-size: 0.95rem; color: #334155; }
@@ -60,7 +60,8 @@
     .btn-whatsapp:hover { background: #1eb954; }
 
     .notice { font-size: 0.825rem; color: #475569; margin-top: 16px; background: #f8fafc; padding: 14px; border-radius: 10px; border-left: 4px solid var(--primary); }
-    
+    .route-notice { background: #fef3c7; border-left-color: #f59e0b; color: #78350f; font-size: 0.85rem; padding: 14px; border-radius: 10px; margin: 12px 0; border-left: 4px solid #f59e0b; }
+
     .contact-links { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
     .contact-item { display: flex; align-items: center; justify-content: space-between; padding: 12px; background: #f8fafc; border-radius: 10px; border: 1px solid var(--border); text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; }
     .contact-item:hover { background: #f1f5f9; }
@@ -140,17 +141,31 @@
           <p>19th Dec 2026</p>
         </div>
         <div class="detail-item">
-          <h4>Pick-up Point</h4>
-          <p>Nile Taxi Stage</p>
-        </div>
-        <div class="detail-item">
           <h4>Destination</h4>
           <p>GT Beach Mukono</p>
         </div>
         <div class="detail-item">
-          <h4>Booking Fee</h4>
-          <p>UGX 20,000</p>
+          <h4>Main Route Pickup</h4>
+          <p>Nile Taxi Stage</p>
         </div>
+        <div class="detail-item">
+          <h4>Kampala Pickup</h4>
+          <p>Colline Hotel Mukono</p>
+        </div>
+        <div class="detail-item">
+          <h4>Standard Entrance</h4>
+          <p>UGX 40,000</p>
+        </div>
+        <div class="detail-item">
+          <h4>Kampala Rate</h4>
+          <p>UGX 35,000</p>
+        </div>
+      </div>
+
+      <!-- Route Clarification Notice -->
+      <div class="route-notice">
+        <strong>📌 Notice for Kampala Attendees:</strong><br>
+        Transport starts from Jinja and goes straight to Mukono. Buses will <u>not</u> enter Kampala city. If you are coming from Kampala, please make your way to Mukono independently — our buses will pick you up at <strong>Colline Hotel, Mukono</strong>!
       </div>
 
       <h4>Activities</h4>
@@ -232,12 +247,18 @@
         <label for="phone">Your Phone Number</label>
         <input type="tel" name="Phone Number" id="phone" placeholder="07XXXXXXXX" required>
 
-        <label for="paymentType">Payment Type</label>
+        <label for="paymentType">Payment Type & Route</label>
         <select name="Payment Type" id="paymentType" onchange="toggleCustomAmount()">
-          <option value="Booking Fee (UGX 20,000)">Booking Fee (UGX 20,000)</option>
-          <option value="Full Entrance Fee (UGX 40,000)">Full Entrance Fee (UGX 40,000)</option>
+          <option value="Booking Fee (UGX 20,000)">Booking Fee — Main Route (UGX 20,000)</option>
+          <option value="Full Entrance Fee (UGX 40,000)">Full Entrance Fee — Main Route (UGX 40,000)</option>
+          <option value="Kampala Full Fee (UGX 35,000)">Kampala Exclusive Rate (UGX 35,000)</option>
+          <option value="Kampala Booking Fee (UGX 20,000)">Kampala Booking Fee (UGX 20,000)</option>
           <option value="Custom / Balance Top-up">Custom / Balance Top-up</option>
         </select>
+
+        <div id="kampalaInfo" style="display: none;" class="notice">
+          📍 <strong>Pickup Point Assigned:</strong> Colline Hotel, Mukono.
+        </div>
 
         <div id="customAmountGroup" style="display: none;">
           <label for="customAmount">Specify Amount Paid (UGX)</label>
@@ -284,10 +305,18 @@
     function toggleCustomAmount() {
       const paymentType = document.getElementById("paymentType").value;
       const customGroup = document.getElementById("customAmountGroup");
+      const kampalaInfo = document.getElementById("kampalaInfo");
+
       if (paymentType === "Custom / Balance Top-up") {
         customGroup.style.display = "block";
       } else {
         customGroup.style.display = "none";
+      }
+
+      if (paymentType.includes("Kampala")) {
+        kampalaInfo.style.display = "block";
+      } else {
+        kampalaInfo.style.display = "none";
       }
     }
 
