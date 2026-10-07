@@ -64,6 +64,63 @@
     .contact-links { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
     .contact-item { display: flex; align-items: center; justify-content: space-between; padding: 12px; background: #f8fafc; border-radius: 10px; border: 1px solid var(--border); text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; }
     .contact-item:hover { background: #f1f5f9; }
+
+    /* NGL Section Styles */
+    .ngl-box {
+      background: linear-gradient(135deg, #ff007a, #ff4e50, #f9d423);
+      padding: 24px 18px;
+      border-radius: 24px;
+      text-align: center;
+      color: white;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 25px rgba(255, 0, 122, 0.2);
+    }
+    .ngl-card {
+      background: white;
+      border-radius: 18px;
+      padding: 18px;
+      color: #111;
+      text-align: left;
+      position: relative;
+    }
+    .ngl-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .ngl-avatar { width: 38px; height: 38px; border-radius: 50%; background: #0f172a; }
+    .ngl-title h4 { font-size: 0.85rem; font-weight: 800; margin: 0; color: #0f172a; }
+    .ngl-title p { font-size: 0.75rem; color: #64748b; margin: 0; }
+    .ngl-textarea {
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 1.05rem;
+      resize: none;
+      background: transparent;
+      color: #111;
+      font-weight: 500;
+    }
+    .dice-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: #f1f5f9;
+      border: none;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .ngl-send-btn {
+      width: 100%;
+      background: #000;
+      color: #fff;
+      padding: 15px;
+      border-radius: 30px;
+      border: none;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-top: 14px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -110,6 +167,31 @@
       <h3>Join the Official Group</h3>
       <p style="font-size: 0.85rem; color: #475569; margin-bottom: 12px;">Get live updates, connect with classmates, and ask questions directly in our group.</p>
       <a href="https://chat.whatsapp.com/JItIbBJcMpX2yM5ixU5YKg?s=cl&p=a&mlu=4&ilr=4" target="_blank" class="btn btn-whatsapp">Join WhatsApp Group</a>
+    </div>
+
+    <!-- Custom NGL Anonymous Message Box -->
+    <div class="ngl-box">
+      <form action="https://formspree.io/f/xnpjjpky" method="POST">
+        <input type="hidden" name="_subject" value="New NGL Anonymous Message!">
+        
+        <div class="ngl-card">
+          <div class="ngl-header">
+            <div class="ngl-avatar"></div>
+            <div class="ngl-title">
+              <h4>@suppressed256</h4>
+              <p>send me anonymous messages!</p>
+            </div>
+          </div>
+          
+          <textarea name="Anonymous Message" id="nglInput" rows="3" placeholder="wyd later?" required class="ngl-textarea"></textarea>
+          
+          <button type="button" class="dice-btn" onclick="getRandomPrompt()">🎲</button>
+        </div>
+
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.9;">🔒 100% anonymous q&a</p>
+
+        <button type="submit" class="ngl-send-btn">Send!</button>
+      </form>
     </div>
 
     <!-- Step 1: Send Money Numbers -->
@@ -207,6 +289,21 @@
       } else {
         customGroup.style.display = "none";
       }
+    }
+
+    // NGL Dice Random Prompt Generator
+    const prompts = [
+      "wyd later?",
+      "Who was your high school crush?",
+      "What is your worst memory from school?",
+      "Are you coming to GT Beach for real?",
+      "Drop a secret nobody knows...",
+      "Who is going to get drunk first at the reunion?"
+    ];
+
+    function getRandomPrompt() {
+      const random = prompts[Math.floor(Math.random() * prompts.length)];
+      document.getElementById('nglInput').value = random;
     }
   </script>
 </body>
