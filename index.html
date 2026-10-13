@@ -3,279 +3,313 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Class of 2022 Hub — Naminya Schools</title>
+  <title>Class of 2022 — Unholy Confessions & Hub</title>
   <style>
     :root {
-      --primary: #0284c7;
-      --primary-hover: #0369a1;
-      --secondary: #f59e0b;
-      --accent: #25d366;
-      --dark: #0f172a;
-      --light: #f8fafc;
-      --card-bg: #ffffff;
-      --border: #e2e8f0;
+      --bg: #09090b;
+      --card-bg: #18181b;
+      --card-border: #27272a;
+      --text-main: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --accent: #8b5cf6; /* Neon Violet */
+      --accent-hover: #7c3aed;
+      --accent-glow: rgba(139, 92, 246, 0.3);
+      --whatsapp: #25d366;
+      --danger: #e11d48;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    body { background-color: var(--light); color: var(--dark); padding-bottom: 50px; line-height: 1.5; }
     
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif; }
+    
+    body { 
+      background-color: var(--bg); 
+      color: var(--text-main); 
+      padding-bottom: 60px; 
+      line-height: 1.6;
+      background-image: radial-gradient(circle at top, #1e1b4b 0%, transparent 40%);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    
+    /* Header */
     header { 
-      background: linear-gradient(135deg, #0369a1, #0f172a); 
-      color: white; 
       text-align: center; 
-      padding: 50px 20px 40px; 
-      border-bottom-left-radius: 24px;
-      border-bottom-right-radius: 24px;
+      padding: 60px 20px 40px; 
     }
-    header h1 { font-size: 2rem; color: var(--secondary); margin-bottom: 6px; letter-spacing: -0.5px; }
-    header p { font-size: 1rem; opacity: 0.9; }
-
-    .container { max-width: 580px; margin: -20px auto 0; padding: 0 16px; }
-    .card { background: var(--card-bg); padding: 24px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); margin-bottom: 20px; border: 1px solid var(--border); }
-    .card h3 { font-size: 1.2rem; margin-bottom: 12px; color: var(--dark); }
-
-    .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
-    .detail-item { background: #f8fafc; padding: 12px; border-radius: 10px; border: 1px solid #f1f5f9; }
-    .detail-item h4 { font-size: 0.75rem; color: #64748b; text-transform: uppercase; margin-bottom: 4px; }
-    .detail-item p { font-size: 0.95rem; font-weight: 700; color: var(--dark); }
-
-    .activities-list { margin-top: 10px; padding-left: 20px; }
-    .activities-list li { margin-bottom: 8px; font-size: 0.95rem; color: #334155; }
-
-    .momo-box { background: #f8fafc; border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-top: 12px; }
-    .momo-row { display: flex; justify-content: space-between; align-items: center; }
-    .momo-title { font-weight: 700; font-size: 0.9rem; }
-    .momo-num { font-family: monospace; font-size: 1.05rem; font-weight: 700; }
-    .momo-name { font-size: 0.8rem; color: #64748b; }
-    
-    .copy-btn { background: #e2e8f0; border: none; padding: 8px 14px; border-radius: 8px; font-size: 0.8rem; cursor: pointer; font-weight: 600; transition: background 0.2s; }
-    .copy-btn:hover { background: #cbd5e1; }
-
-    form label { display: block; margin-top: 16px; font-weight: 600; font-size: 0.85rem; color: #334155; }
-    form input, form select { width: 100%; padding: 12px 14px; margin-top: 6px; border: 1px solid var(--border); border-radius: 10px; font-size: 0.95rem; background: #fff; }
-    form input:focus, form select:focus { outline: none; border-color: var(--primary); }
-
-    .btn { display: block; width: 100%; background: var(--primary); color: white; padding: 14px; border: none; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 20px; text-align: center; text-decoration: none; transition: background 0.2s; }
-    .btn:hover { background: var(--primary-hover); }
-    .btn-whatsapp { background: var(--accent); margin-top: 10px; }
-    .btn-whatsapp:hover { background: #1eb954; }
-
-    .notice { font-size: 0.825rem; color: #475569; margin-top: 16px; background: #f8fafc; padding: 14px; border-radius: 10px; border-left: 4px solid var(--primary); }
-    
-    .contact-links { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
-    .contact-item { display: flex; align-items: center; justify-content: space-between; padding: 12px; background: #f8fafc; border-radius: 10px; border: 1px solid var(--border); text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; }
-    .contact-item:hover { background: #f1f5f9; }
-
-    /* Custom Green NGL Portal */
-    .ngl-box {
-      background: linear-gradient(135deg, #10b981, #059669, #047857);
-      padding: 24px 18px;
-      border-radius: 24px;
-      text-align: center;
-      color: white;
-      margin-bottom: 20px;
-      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.25);
+    header h1 { 
+      font-size: 2.2rem; 
+      font-weight: 800; 
+      letter-spacing: -1px;
+      background: linear-gradient(to right, #a78bfa, #e879f9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
     }
-    .ngl-card {
-      background: white;
-      border-radius: 18px;
-      padding: 18px;
-      color: #111;
-      text-align: left;
+    header p { 
+      font-size: 1rem; 
+      color: var(--text-muted); 
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .container { max-width: 600px; margin: 0 auto; padding: 0 16px; }
+    
+    /* Glassmorphism Cards */
+    .card { 
+      background: rgba(24, 24, 27, 0.8); 
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 24px; 
+      border-radius: 20px; 
+      margin-bottom: 24px; 
+      border: 1px solid var(--card-border);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .card h2 { 
+      font-size: 1.25rem; 
+      margin-bottom: 12px; 
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    /* Welcome Note */
+    .welcome-note {
+      border-left: 3px solid var(--accent);
+      background: linear-gradient(90deg, rgba(139, 92, 246, 0.05) 0%, transparent 100%);
+    }
+
+    /* Confessions Box (Unholy Confessions Style) */
+    .confession-box {
+      background: linear-gradient(135deg, #18181b, #2e1065);
+      border: 1px solid #4c1d95;
       position: relative;
+      overflow: hidden;
     }
-    .ngl-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-    .ngl-avatar { width: 38px; height: 38px; border-radius: 50%; background: #0f172a; }
-    .ngl-title h4 { font-size: 0.85rem; font-weight: 800; margin: 0; color: #0f172a; }
-    .ngl-title p { font-size: 0.75rem; color: #64748b; margin: 0; }
-    .ngl-textarea {
+    .confession-box::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 60%);
+      animation: rotate 20s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .confession-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; position: relative; z-index: 1; }
+    .avatar { width: 42px; height: 42px; border-radius: 50%; background: #4c1d95; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 1.2rem; }
+    .confession-header h4 { font-size: 1rem; color: white; margin: 0; }
+    .confession-header p { font-size: 0.8rem; color: #a78bfa; margin: 0; }
+    
+    .confession-textarea {
       width: 100%;
-      border: none;
-      outline: none;
-      font-size: 1.05rem;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid #3f3f46;
+      border-radius: 12px;
+      padding: 16px;
+      color: white;
+      font-size: 1rem;
       resize: none;
-      background: transparent;
-      color: #111;
-      font-weight: 500;
+      outline: none;
+      position: relative;
+      z-index: 1;
+      transition: border-color 0.2s;
     }
+    .confession-textarea:focus { border-color: var(--accent); }
+    
     .dice-btn {
       position: absolute;
-      bottom: 10px;
-      right: 10px;
-      background: #f1f5f9;
-      border: none;
+      bottom: 12px;
+      right: 12px;
+      background: #27272a;
+      border: 1px solid #3f3f46;
+      color: #a78bfa;
       border-radius: 50%;
-      width: 34px;
-      height: 34px;
+      width: 36px;
+      height: 36px;
       font-size: 1.1rem;
       cursor: pointer;
+      z-index: 2;
+      transition: all 0.2s;
     }
-    .ngl-send-btn {
+    .dice-btn:hover { background: #3f3f46; transform: scale(1.1); }
+    
+    .confession-btn {
       width: 100%;
-      background: #000;
-      color: #fff;
-      padding: 15px;
-      border-radius: 30px;
+      background: var(--accent);
+      color: white;
+      padding: 16px;
+      border-radius: 12px;
       border: none;
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 700;
-      margin-top: 14px;
+      margin-top: 16px;
       cursor: pointer;
+      position: relative;
+      z-index: 1;
+      transition: all 0.2s;
+      box-shadow: 0 0 15px var(--accent-glow);
     }
+    .confession-btn:hover { background: var(--accent-hover); box-shadow: 0 0 25px var(--accent-glow); }
+
+    /* Fund Section */
+    .momo-box { background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px; margin-top: 12px; }
+    .momo-row { display: flex; justify-content: space-between; align-items: center; }
+    .momo-title { font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    .momo-num { font-family: monospace; font-size: 1.1rem; font-weight: 700; color: white; }
+    .momo-name { font-size: 0.8rem; color: var(--text-muted); }
+    
+    .copy-btn { background: #27272a; border: none; color: white; padding: 8px 14px; border-radius: 8px; font-size: 0.8rem; cursor: pointer; font-weight: 600; transition: background 0.2s; }
+    .copy-btn:hover { background: #3f3f46; }
+
+    /* Contact Links */
+    .contact-links { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+    .contact-item { display: flex; align-items: center; justify-content: space-between; padding: 14px; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid var(--card-border); text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.9rem; transition: background 0.2s; }
+    .contact-item:hover { background: #27272a; }
+
+    /* Buttons */
+    .btn { display: block; width: 100%; background: var(--accent); color: white; padding: 14px; border: none; border-radius: 12px; font-size: 1rem; font-weight: 700; cursor: pointer; text-align: center; text-decoration: none; transition: background 0.2s; }
+    .btn:hover { background: var(--accent-hover); }
+    .btn-whatsapp { background: var(--whatsapp); color: #000; margin-top: 10px; }
+    .btn-whatsapp:hover { background: #1eb954; }
+
+    /* Form Inputs */
+    form label { display: block; margin-top: 16px; font-weight: 600; font-size: 0.85rem; color: var(--text-muted); }
+    form input, form select { width: 100%; padding: 14px; margin-top: 6px; border: 1px solid var(--card-border); border-radius: 12px; font-size: 0.95rem; background: rgba(0,0,0,0.3); color: white; outline: none; transition: border-color 0.2s; }
+    form input:focus, form select:focus { border-color: var(--accent); }
+    form select option { background: var(--card-bg); color: white; }
+
+    .notice { font-size: 0.85rem; color: var(--text-muted); margin-top: 20px; background: rgba(0,0,0,0.3); padding: 16px; border-radius: 12px; border-left: 3px solid var(--accent); }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Class of 2022 Hub</h1>
-    <p>Naminya Schools — Alumni Community</p>
+    <h1>Class of 2022</h1>
+    <p>Naminya Schools — Unholy Confessions & Hub</p>
   </header>
 
   <div class="container">
     
-    <!-- Event Planning & Hangouts -->
-    <div class="card">
-      <h3>Upcoming Meetups & Events</h3>
-      <p style="font-size: 0.85rem; color: #475569; margin-top: 4px;">
-        The big trip is off, but we are pivoting to smaller, frequent hangouts! Let's plan a picnic, date night, or casual link-up.
-      </p>
-      
-      <div class="details-grid">
-        <div class="detail-item">
-          <h4>Next Event</h4>
-          <p>TBA</p>
-        </div>
-        <div class="detail-item">
-          <h4>Location</h4>
-          <p>Jinja / Kampala</p>
-        </div>
-        <div class="detail-item">
-          <h4>Activity</h4>
-          <p>Picnic & Games</p>
-        </div>
-        <div class="detail-item">
-          <h4>Est. Budget</h4>
-          <p>UGX 10,000 - 20,000</p>
-        </div>
-      </div>
-
-      <h4 style="font-size: 0.9rem; margin-top: 15px; margin-bottom: 8px;">What We Do</h4>
-      <ul class="activities-list">
-        <li>Small Hangouts & Date Nights</li>
-        <li>Picnics & Road Trips</li>
-        <li>Games, Music & Networking</li>
-        <li>Class Welfare & Support</li>
-      </ul>
+    <!-- Welcome Note -->
+    <div class="card welcome-note">
+      <h2>👋 Welcome Home, Class of 2022</h2>
+      <p>Whether you were the class clown, the quiet genius, or the one who always got caught... this is your space. The big trip was cancelled, but our bond remains. This is now our official digital headquarters to keep the family together.</p>
     </div>
 
-    <!-- WhatsApp Group Invite Button -->
-    <div class="card" style="text-align: center;">
-      <h3>Join the Official Group</h3>
-      <p style="font-size: 0.85rem; color: #475569; margin-bottom: 12px;">Get live updates, connect with classmates, and plan hangouts directly in our group.</p>
-      <a href="https://chat.whatsapp.com/JItIbBJcMpX2yM5ixU5YKg?s=cl&p=a&mlu=4&ilr=4" target="_blank" class="btn btn-whatsapp">Join WhatsApp Group</a>
-    </div>
-
-    <!-- Green Anonymous Q&A Portal (Unchanged as requested) -->
-    <div class="ngl-box">
+    <!-- Unholy Confessions (Centerpiece) -->
+    <div class="card confession-box">
       <form action="https://formspree.io/f/xnpjjpky" method="POST">
-        <input type="hidden" name="_subject" value="💬 New Anonymous Message for Zion!">
+        <input type="hidden" name="_subject" value="💬 New Unholy Confession for Zion!">
         
-        <div class="ngl-card">
-          <div class="ngl-header">
-            <div class="ngl-avatar"></div>
-            <div class="ngl-title">
-              <h4>@Zion</h4>
-              <p>send me anonymous messages!</p>
-            </div>
+        <div class="confession-header">
+          <div class="avatar">Z</div>
+          <div>
+            <h4>@Zion</h4>
+            <p>send me anonymous messages!</p>
           </div>
-          
-          <textarea name="Anonymous Message" id="nglInput" rows="3" placeholder="Confess, you sinner... no one will know it's you 😂" required class="ngl-textarea"></textarea>
-          
-          <button type="button" class="dice-btn" onclick="getRandomPrompt()">🎲</button>
         </div>
+        
+        <textarea name="Anonymous Message" id="nglInput" rows="4" placeholder="Confess, you sinner... no one will know it's you 😂" required class="confession-textarea"></textarea>
+        
+        <button type="button" class="dice-btn" onclick="getRandomPrompt()">🎲</button>
 
-        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.9;">🔒 100% anonymous q&a</p>
+        <p style="font-size: 0.8rem; text-align: center; margin-top: 10px; color: #a78bfa; position: relative; z-index: 1;">🔒 100% anonymous q&a</p>
 
-        <button type="submit" class="ngl-send-btn">Send!</button>
+        <button type="submit" class="confession-btn">Send Confession</button>
       </form>
     </div>
 
-    <!-- Step 1: Class Fund / Kitty -->
+    <!-- Event Updates & Record -->
     <div class="card">
-      <h3>Step 1: Contribute to the Fund</h3>
-      <p style="font-size: 0.85rem; color: #475569; margin-top: 4px;">
-        Send your contribution to the Class Welfare Kitty (for events & support) to either account below:
-      </p>
+      <h2>📅 The Next Chapter</h2>
+      <p>Instead of one massive, expensive trip, we are shifting gears to smaller, more intimate hangouts. Think casual picnics, date nights, and spontaneous link-ups.</p>
+      <p>We don't have a fixed date yet, but planning is happening in the WhatsApp group. This site will be updated with the next event details as soon as we lock them in. Keep checking back!</p>
+    </div>
+
+    <!-- Class Fund / Welfare -->
+    <div class="card">
+      <h2>💸 Class Welfare Fund</h2>
+      <p>We are keeping the kitty alive. Contributions go towards supporting classmates in need, celebrating wins, and funding our small hangouts. Every shilling counts.</p>
 
       <div class="momo-box">
         <div class="momo-row">
           <div>
-            <div class="momo-title" style="color: #d97706;">MTN Mobile Money</div>
+            <div class="momo-title" style="color: #f59e0b;">MTN Mobile Money</div>
             <div class="momo-num" id="mtnNum">0782323095</div>
             <div class="momo-name">Kibwika Rasul</div>
           </div>
           <button class="copy-btn" onclick="copyNumber('mtnNum')">Copy</button>
         </div>
-        <hr style="border: 0; border-top: 1px solid var(--border); margin: 12px 0;">
+        <hr style="border: 0; border-top: 1px solid var(--card-border); margin: 12px 0;">
         <div class="momo-row">
           <div>
-            <div class="momo-title" style="color: #dc2626;">Airtel Money</div>
+            <div class="momo-title" style="color: #ef4444;">Airtel Money</div>
             <div class="momo-num" id="airtelNum">0743853811</div>
             <div class="momo-name">Wabwiire Elvis</div>
           </div>
           <button class="copy-btn" onclick="copyNumber('airtelNum')">Copy</button>
         </div>
       </div>
-    </div>
 
-    <!-- Step 2: Confirmation Form -->
-    <div class="card">
-      <h3>Step 2: Submit Contribution Details</h3>
       <form id="confirmForm" action="https://formspree.io/f/xnpjjpky" method="POST">
         <label for="fullname">Full Name</label>
         <input type="text" name="Full Name" id="fullname" placeholder="Enter your full name" required>
 
-        <label for="phone">Your Phone Number</label>
+        <label for="phone">Phone Number</label>
         <input type="tel" name="Phone Number" id="phone" placeholder="07XXXXXXXX" required>
 
         <label for="paymentType">Contribution Type</label>
         <select name="Payment Type" id="paymentType" onchange="toggleCustomAmount()">
-          <option value="Monthly Welfare Contribution">Monthly Welfare Contribution</option>
-          <option value="Event Fund (Picnic/Date Night)">Event Fund (Picnic/Date Night)</option>
+          <option value="Welfare Contribution">Welfare Contribution</option>
+          <option value="Event Fund">Event Fund</option>
           <option value="Custom / Top-up">Custom / Top-up</option>
         </select>
 
         <div id="customAmountGroup" style="display: none;">
-          <label for="customAmount">Specify Amount Sent (UGX)</label>
+          <label for="customAmount">Amount Sent (UGX)</label>
           <input type="number" name="Custom Amount" id="customAmount" placeholder="e.g. 10000">
         </div>
 
-        <label for="txid">Mobile Money Transaction ID / Ref</label>
+        <label for="txid">Transaction ID / Ref</label>
         <input type="text" name="Transaction ID" id="txid" placeholder="e.g. 24891023912" required>
 
-        <button type="submit" class="btn">Confirm Contribution</button>
+        <button type="submit" class="btn" style="margin-top: 24px;">Confirm Contribution</button>
       </form>
 
       <div class="notice">
-        <p><strong>Note:</strong> Contributions are 100% voluntary and go towards our class welfare and funding small hangouts.</p>
         <p><strong>Transparency:</strong> A financial update will be shared in the WhatsApp group at the end of every month.</p>
       </div>
     </div>
 
-    <!-- Contact Options (Zion's Links) -->
-    <div class="card">
-      <h3>Need Help?</h3>
-      <p style="font-size: 0.85rem; color: #475569; margin-bottom: 10px;">Reach out directly to Zion for inquiries or support:</p>
-      <div class="contact-links">
+    <!-- Community Links -->
+    <div class="card" style="text-align: center;">
+      <h2>🔗 Connect With Us</h2>
+      <p style="margin-bottom: 16px;">Get live updates, connect with classmates, and plan hangouts.</p>
+      
+      <a href="https://chat.whatsapp.com/JItIbBJcMpX2yM5ixU5YKg?s=cl&p=a&mlu=4&ilr=4" target="_blank" class="btn btn-whatsapp">Join Official WhatsApp Group</a>
+      
+      <div class="contact-links" style="margin-top: 20px;">
         <a href="https://wa.me/qr/2MFKKV43BY7FH1" target="_blank" class="contact-item">
-          <span>WhatsApp Organizer</span>
-          <span style="color: var(--accent);">Direct Chat</span>
+          <span>WhatsApp Organizer (Zion)</span>
+          <span style="color: var(--whatsapp);">Direct Chat</span>
         </a>
         <a href="https://x.com/suppressed256" target="_blank" class="contact-item">
           <span>Follow / DM on X</span>
-          <span style="color: var(--primary);">@suppressed256</span>
+          <span style="color: var(--accent);">@suppressed256</span>
         </a>
       </div>
     </div>
+
   </div>
 
   <script>
@@ -299,7 +333,7 @@
       }
     }
 
-    // NGL Dice Random Prompt Generator (Updated with non-trip ideas)
+    // Dice Random Prompt Generator (Unholy Confessions style)
     const prompts = [
       "Confess, you sinner... no one will know it's you 😂",
       "Who was your secret high school crush?",
@@ -307,7 +341,8 @@
       "Who is most likely to get drunk first at our next hangout? 🍻",
       "Drop some juicy high school tea nobody knows... ☕",
       "What is the most embarrassing thing you did in S.4?",
-      "Who do you think has changed the most since 2022?"
+      "Who do you think has changed the most since 2022?",
+      "Tell me something you've never told anyone from class... 🤫"
     ];
 
     function getRandomPrompt() {
@@ -316,4 +351,4 @@
     }
   </script>
 </body>
-  </html>
+</html>
