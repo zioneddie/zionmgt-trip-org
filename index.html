@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Class of 2022 — Unholy Confessions & Hub</title>
+  <title>Class of 2022 — St Mark's Online Hub</title>
   <style>
     :root {
       --bg: #09090b;
@@ -84,7 +84,7 @@
       background: linear-gradient(90deg, rgba(139, 92, 246, 0.05) 0%, transparent 100%);
     }
 
-    /* Confessions Box (Unholy Confessions Style) */
+    /* Confessions Box */
     .confession-box {
       background: linear-gradient(135deg, #18181b, #2e1065);
       border: 1px solid #4c1d95;
@@ -195,21 +195,21 @@
 
   <header>
     <h1>Class of 2022</h1>
-    <p>Naminya Schools — Unholy Confessions & Hub</p>
+    <p>St Mark's — Online Hub</p>
   </header>
 
   <div class="container">
     
-    <!-- Welcome Note -->
+    <!-- Welcome Note (Simplified English) -->
     <div class="card welcome-note">
-      <h2>👋 Welcome Home, Class of 2022</h2>
-      <p>Whether you were the class clown, the quiet genius, or the one who always got caught... this is your space. The big trip was cancelled, but our bond remains. This is now our official digital headquarters to keep the family together.</p>
+      <h2>👋 Welcome to the Hub</h2>
+      <p>Hey guys. Even though the big trip got cancelled, we aren't just going to disappear. This is just a simple site to keep us connected and updated on what everyone is up to. Whether you were the quiet one or the loudest in class, this space is for all of us.</p>
     </div>
 
     <!-- Unholy Confessions (Centerpiece) -->
     <div class="card confession-box">
       <form action="https://formspree.io/f/xnpjjpky" method="POST">
-        <input type="hidden" name="_subject" value="💬 New Unholy Confession for Zion!">
+        <input type="hidden" name="_subject" value="💬 New Anonymous Message!">
         
         <div class="confession-header">
           <div class="avatar">Z</div>
@@ -219,27 +219,27 @@
           </div>
         </div>
         
-        <textarea name="Anonymous Message" id="nglInput" rows="4" placeholder="Confess, you sinner... no one will know it's you 😂" required class="confession-textarea"></textarea>
+        <textarea name="Anonymous Message" id="nglInput" rows="4" placeholder="Tell me anything. It's completely anonymous, so I won't know it's you." required class="confession-textarea"></textarea>
         
         <button type="button" class="dice-btn" onclick="getRandomPrompt()">🎲</button>
 
         <p style="font-size: 0.8rem; text-align: center; margin-top: 10px; color: #a78bfa; position: relative; z-index: 1;">🔒 100% anonymous q&a</p>
 
-        <button type="submit" class="confession-btn">Send Confession</button>
+        <button type="submit" class="confession-btn">Send Message</button>
       </form>
     </div>
 
-    <!-- Event Updates & Record -->
+    <!-- Event Updates & Record (Simplified English) -->
     <div class="card">
-      <h2>📅 The Next Chapter</h2>
-      <p>Instead of one massive, expensive trip, we are shifting gears to smaller, more intimate hangouts. Think casual picnics, date nights, and spontaneous link-ups.</p>
-      <p>We don't have a fixed date yet, but planning is happening in the WhatsApp group. This site will be updated with the next event details as soon as we lock them in. Keep checking back!</p>
+      <h2>📅 What's Next?</h2>
+      <p>Since the big trip is off, we are going to start doing smaller, easier hangouts instead. Think simple picnics, chill dates, or just linking up when people are free.</p>
+      <p>We don't have a date set yet, but we are talking about it in the WhatsApp group. Once we decide on something, we will update this page with the details. So keep checking back here!</p>
     </div>
 
     <!-- Class Fund / Welfare -->
     <div class="card">
       <h2>💸 Class Welfare Fund</h2>
-      <p>We are keeping the kitty alive. Contributions go towards supporting classmates in need, celebrating wins, and funding our small hangouts. Every shilling counts.</p>
+      <p>We are keeping the kitty alive. Any money sent goes towards helping classmates who need it, celebrating wins, and paying for our small hangouts.</p>
 
       <div class="momo-box">
         <div class="momo-row">
@@ -268,11 +268,11 @@
         <label for="phone">Phone Number</label>
         <input type="tel" name="Phone Number" id="phone" placeholder="07XXXXXXXX" required>
 
-        <label for="paymentType">Contribution Type</label>
+        <label for="paymentType">What is this for?</label>
         <select name="Payment Type" id="paymentType" onchange="toggleCustomAmount()">
           <option value="Welfare Contribution">Welfare Contribution</option>
           <option value="Event Fund">Event Fund</option>
-          <option value="Custom / Top-up">Custom / Top-up</option>
+          <option value="Custom / Top-up">Other / Top-up</option>
         </select>
 
         <div id="customAmountGroup" style="display: none;">
@@ -283,11 +283,11 @@
         <label for="txid">Transaction ID / Ref</label>
         <input type="text" name="Transaction ID" id="txid" placeholder="e.g. 24891023912" required>
 
-        <button type="submit" class="btn" style="margin-top: 24px;">Confirm Contribution</button>
+        <button type="submit" class="btn" style="margin-top: 24px;">Confirm</button>
       </form>
 
       <div class="notice">
-        <p><strong>Transparency:</strong> A financial update will be shared in the WhatsApp group at the end of every month.</p>
+        <p>We will share an update in the WhatsApp group at the end of every month showing how the money is being used.</p>
       </div>
     </div>
 
@@ -300,7 +300,7 @@
       
       <div class="contact-links" style="margin-top: 20px;">
         <a href="https://wa.me/qr/2MFKKV43BY7FH1" target="_blank" class="contact-item">
-          <span>WhatsApp Organizer (Zion)</span>
+          <span>WhatsApp Admin (Zion)</span>
           <span style="color: var(--whatsapp);">Direct Chat</span>
         </a>
         <a href="https://x.com/suppressed256" target="_blank" class="contact-item">
@@ -333,9 +333,9 @@
       }
     }
 
-    // Dice Random Prompt Generator (Unholy Confessions style)
+    // Dice Random Prompt Generator
     const prompts = [
-      "Confess, you sinner... no one will know it's you 😂",
+      "Tell me anything. It's completely anonymous, so I won't know it's you.",
       "Who was your secret high school crush?",
       "What's the worst lie you told a teacher?",
       "Who is most likely to get drunk first at our next hangout? 🍻",
